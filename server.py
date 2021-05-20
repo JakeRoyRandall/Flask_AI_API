@@ -7,11 +7,10 @@ import os
 from PIL import Image
 import os.path as osp
 import argparse
-import numpy as np
+from random import random
 import dnnlib
 import legacy
 from utilgan import latent_anima, basename, img_read
-from random import random
 
 app = Flask(__name__)
 
@@ -19,7 +18,7 @@ app = Flask(__name__)
 
 def handleRequest():
 
-    args = { 'out_dir': '_out', 'model': 'models/ffhq', 'size': None,
+    args = { 'out_dir': '_out', 'model': '../models/ffhq', 'size': None,
         'scale_type': 'pad', 'latmask': None, 'nXY': '1-1',
         'splitfine': 0, 'trunc': 0.8, 'digress': 0,
         'frames': 1, 'fstep': 10, 'cubic': True, 'gauss': True }
